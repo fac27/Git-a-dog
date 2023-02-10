@@ -1,13 +1,8 @@
 // Get github user using fetch
 
-let userName = document.getElementById('user-name');
-
-userName.addEventListener('keydown', (e) =>{
-  if(e.key === "Enter"){
-    e.preventDefault();
-    let inputValue = userName.value;
-    fetch(`https://api.github.com/users/${inputValue}`)
-    return fetch(`https://api.github.com/users/${inputValue}`)
+async function getUser(name){
+    fetch(`https://api.github.com/users/${name}`)
+    return fetch(`https://api.github.com/users/${name}`)
     .then ((response) => response.json()) // access the response using json() method
   }
 
