@@ -20,7 +20,7 @@
 
 ### Debugging network requests
 - The DevTools Network panel allows you to make sure that resources are being downloaded or uploaded as expected.
-![DevTools scrnshot](gImages/Inspect%20Network%20DevTools%20scrnshot.png=300x300)
+![DevTools scrnshot](Images/Inspect%20Network%20DevTools%20scrnshot.png=300x300)
 - REST Clients - a tool which allows you to send HTTP requests to server and see the response
 > **Insomnia** allows you to design debug and test your APIs.
 
