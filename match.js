@@ -25,6 +25,14 @@ userName.addEventListener('keydown', (e) =>{
  
     fetch(`https://dog.ceo/api/breeds/list/all`)
     // return fetch(`https://dog.ceo/api/breeds/list/all`)
+let userName = document.getElementById('user-name');
+
+userName.addEventListener('keydown', (e) =>{
+  if(e.key === "Enter"){
+    e.preventDefault();
+    let inputValue = userName.value;
+    fetch(`https://api.github.com/users/${inputValue}`)
+    return fetch(`https://api.github.com/users/${inputValue}`)
     .then ((response) => response.json()) // access the response using json() method
     .then((response) => 
           {let breeds = Object.keys(response.message)
@@ -77,6 +85,7 @@ userName.addEventListener('keydown', (e) =>{
 
 
 
-  
 
- 
+  getUser("eliazzo")
+  .then((user) => console.log(user))
+  .catch((error) => console.log(error))
