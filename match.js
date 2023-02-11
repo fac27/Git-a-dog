@@ -36,7 +36,7 @@ async function getUser(name){
     })
     .catch((error) => console.log(error))
 
-    // This produces an error "blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+
 
   
 
