@@ -1,4 +1,9 @@
 
+# Process
+
+### Wireframe
+![wireframe](Images/Wireframe%20scrnshot.png)
+
 # SPIKE
 
 ### Debugging JavaScript
