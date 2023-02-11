@@ -2,7 +2,7 @@
 # Process
 
 ### Wireframe
-![wireframe](Images/Wireframe%20scrnshot.png)
+![Wireframe](/Images/Wireframe-scrnshot.png)
 
 # SPIKE
 
