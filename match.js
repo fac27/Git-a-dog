@@ -14,16 +14,22 @@ function getUser(name){
   // Test access to dog API
 
   function getDog(breed){
-    fetch(`https://dog.ceo/api/${breed}/image/random`)
-    return fetch(`https://dog.ceo/api/${breed}/image/random`)
+    fetch(`https://dog.ceo/api/breed/${breed}/images/random`)
+    return fetch(`https://dog.ceo/api/breed/${breed}/images/random`)
     .then((response) => response.json())
   }
 
-  getDog("poodle-standard")
-    .then((dog) => console.log(dog))
-    .catch((error) => console.log(error))
+  getDog("Akita")
+    // .then((dog) => console.log(dog))
+    // .catch((error) => console.log(error))
+    .then((dogData) => {
+      const heading = document.createElement("h2")
+      heading.innerHTML = dogData.status
+      const output = document.querySelector("output");
+      output.append(heading)
+    })
 
-    // This produces an error "blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+
 
   
 
