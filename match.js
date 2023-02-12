@@ -1,8 +1,13 @@
 // Get github user using fetch
 
-async function getUser(name){
-    fetch(`https://api.github.com/users/${name}`)
-    return fetch(`https://api.github.com/users/${name}`)
+let userName = document.getElementById('user-name');
+
+userName.addEventListener('keydown', (e) =>{
+  if(e.key === "Enter"){
+    e.preventDefault();
+    let inputValue = userName.value;
+    fetch(`https://api.github.com/users/${inputValue}`)
+    return fetch(`https://api.github.com/users/${inputValue}`)
     .then ((response) => response.json()) // access the response using json() method
   }
 
@@ -25,19 +30,17 @@ async function getUser(name){
     .then((response) => response.json())
   }
 
-  getDog("Akita")
-    // .then((dog) => console.log(dog))
-    // .catch((error) => console.log(error))
+  getDog("akita")
+    .then((dog) => console.log(dog))
+    .catch((error) => console.log(error))
+  
+// Display dog image on page
+    getDog("akita")
     .then((dogData) => {
-      const heading = document.createElement("h2")
-      heading.innerHTML = dogData.status
-      const output = document.querySelector("output");
-      output.append(heading)
+      const dogImage = document.createElement("img")
+      dogImage.src = dogData.message
+      const output = document.querySelector("output")
+      output.append(dogImage)
     })
     .catch((error) => console.log(error))
 
-
-
-  
-
- 
