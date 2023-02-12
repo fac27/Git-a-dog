@@ -46,7 +46,13 @@ userName.addEventListener('keydown', (e) =>{
   }
 
   getUser("eliazzo")
-  .then((user) => console.log(user))
+  // .then((user) => console.log(user))
+  .then((userData) => {
+    const heading = document.createElement("h2")
+    heading.innerText = userData.login
+    const output = document.querySelector("output");
+    output.append(heading)
+  })
   .catch((error) => console.log(error))
 
 
@@ -67,6 +73,7 @@ userName.addEventListener('keydown', (e) =>{
       const output = document.querySelector("output");
       output.append(heading)
     })
+    .catch((error) => console.log(error))
 
 
 
