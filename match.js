@@ -27,8 +27,8 @@ userName.addEventListener('keydown', (e) =>{
     // return fetch(`https://dog.ceo/api/breeds/list/all`)
     .then ((response) => response.json()) // access the response using json() method
     .then((response) => 
-          {let x = response.message
-          console.log(x.buhund)});
+          {let breeds = Object.keys(response.message)
+          console.log(breeds)});
   
   // getUser(inputValue)
   // .then((user) => console.log(user))
