@@ -1,38 +1,41 @@
 // Get github user using fetch
 
-function getUser(name){
+async function getUser(name){
     fetch(`https://api.github.com/users/${name}`)
     return fetch(`https://api.github.com/users/${name}`)
     .then ((response) => response.json()) // access the response using json() method
   }
 
+// Display user name on page
   getUser("eliazzo")
   // .then((user) => console.log(user))
   .then((userData) => {
-    const heading = document.createElement("h2")
-    heading.innerText = userData.login
+    const userName = document.createElement("h2")
+    userName.innerText = userData.login
     const output = document.querySelector("output");
-    output.append(heading)
+    output.append(userName)
   })
   .catch((error) => console.log(error))
 
 
-  // Test access to dog API
+  // Testing access to dog API
 
-  function getDog(breed){
-    fetch(`https://dog.ceo/api/breed/${breed}/images/random`)
-    return fetch(`https://dog.ceo/api/breed/${breed}/images/random`)
+  async function getDog(breed){
+    return fetch(`https://dog.ceo/api/breeds/image/random`)
     .then((response) => response.json())
   }
 
-  getDog("Akita")
-    // .then((dog) => console.log(dog))
-    // .catch((error) => console.log(error))
+  getDog("akita")
+    .then((dog) => console.log(dog))
+    .catch((error) => console.log(error))
+  
+// Display dog image on page
+    getDog("akita")
     .then((dogData) => {
-      const heading = document.createElement("h2")
-      heading.innerHTML = dogData.status
-      const output = document.querySelector("output");
-      output.append(heading)
+      const dogImage = document.createElement("img")
+      dogImage.src = dogData.message
+      const output = document.querySelector("output")
+      output.append(dogImage)
     })
     .catch((error) => console.log(error))
 
