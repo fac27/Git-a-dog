@@ -18,8 +18,6 @@ async function getUser(name){
   .catch((error) => console.log(error))
 
 
-  
-
   // Testing access to dog API
 
   async function getDog(breed){
@@ -40,6 +38,7 @@ async function getUser(name){
       output.append(dogImage)
     })
     .catch((error) => console.log(error))
+
 
 //gets github data from input
 let userName = document.getElementById('user-name');
@@ -71,5 +70,4 @@ userName.addEventListener('keydown', (e) =>{
 
         });
 
-          
-         
+
