@@ -1,7 +1,6 @@
 // Get github user using fetch
 
 async function getUser(name){
-    fetch(`https://api.github.com/users/${name}`)
     return fetch(`https://api.github.com/users/${name}`)
     .then ((response) => response.json()) // access the response using json() method
   }
@@ -15,7 +14,23 @@ async function getUser(name){
     const output = document.querySelector("output");
     output.append(userName)
   })
-  .catch((error) => console.log(error))
+  .catch((error) => console.log(error));
+
+
+  // Get user github username via user input and display on page
+
+  function inputUser(event){
+    event.preventDefault();
+    const usernameInput = document.getElementById("username");
+    const displayUsername = document.createElement("p");
+    let inputValue = usernameInput.value;
+    displayUsername.innerText = inputValue
+    const output = document.querySelector("output");
+    output.append(displayUsername);
+    fetch(`https://api.github.com/users/${inputValue}`)
+    .then ((response) => response.json())
+    .then ((user) => console.log(user))
+  }
 
 
   // Testing access to dog API
