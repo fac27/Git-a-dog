@@ -40,7 +40,8 @@ async function getUser(name){
     .catch((error) => console.log(error))
 
 
-//gets github data from input
+// Gets github data from input
+
 let userName = document.getElementById('user-name');
 userName.addEventListener('keydown', (e) =>{
   if(e.key === "Enter"){
@@ -49,22 +50,48 @@ userName.addEventListener('keydown', (e) =>{
     fetch(`https://api.github.com/users/${inputValue}`)
     .then((response) => response.json()) // access the response using json() method
     .then((user) => console.log(user))
+
     //trying to see if we can make a rule based on the first character
-    .then(() => {
-      let y = inputValue.split('', 1); 
-      console.log(y)})
+    // .then(() => {
+    //   let splitChar = inputValue.split('', 5); 
+    //   console.log(splitChar)})
+
+    // Access a dog breed according to the first character of the user input
+
+    const breedList = `https://dog.ceo/api/breeds/list/all`
+    fetch(breedList)
+    .then ((response) => response.json())
+    .then ((data) =>{
+      let breeds = Object.keys(data.message);
+      let inputValue = userName.value;
+      let matchingBreeds = breeds.filter(breed => breed.startsWith(inputValue.charAt(0).toLowerCase()));
+      if (matchingBreeds.length === 0) {
+        console.log(`No dog breeds found starting with '${inputValue}'.`);
+      } else {
+        let randomBreed = matchingBreeds[Math.floor(Math.random() * matchingBreeds.length)];
+        console.log(`Here's a random dog breed starting with '${inputValue}': ${randomBreed}.`);
+      }   
+    })
     .catch((error) => console.log(error))
  }
  })
 
- //get breeds list 
+
+
+      // Get breeds list 
  fetch(`https://dog.ceo/api/breeds/list/all`)
-    .then ((response) => response.json())
-     // access the response using json() method
+    .then ((response) => response.json()) // Access the response using json() method
      .then(data => {
-      for (let breed in data.message) { //each iteration of the loop gives us a breed key
-        let keyVal = breed + ' ' + data.message[breed]; //concatenate the key and value using the + operator 
+      for (let breed in data.message) { // Each iteration of the loop returns a breed key pair
+        let keyVal = breed + ' ' + data.message[breed]; // Concatenates the key and value using the + operator 
         console.log(keyVal)
+
+      // Displays the list of dogs on the page
+
+      // const displayDogName = document.createElement("p");
+      // displayDogName.innerText = keyVal;
+      // const output = document.querySelector("output");
+      // output.append(displayDogName);
       }
     })
     .catch(error => console.error(error));
