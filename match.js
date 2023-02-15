@@ -59,15 +59,21 @@ userName.addEventListener('keydown', (e) =>{
 
  //get breeds list 
  fetch(`https://dog.ceo/api/breeds/list/all`)
-    .then ((response) => response.json()) // access the response using json() method
-    .then((response) => 
-          {let x = response.message
-        //   console.log(x)
-          const entries = Object.entries(x);
-          const result = entries.map(entry => entry.join('-'));
-          //this needs to be fixed so it concats the keys and values in a loop
-          console.log(result);
+    .then ((response) => response.json())
+     // access the response using json() method
+     .then(data => {
+      for (let breed in data.message) { //each iteration of the loop gives us a breed key
+        let keyVal = breed + ' ' + data.message[breed]; //concatenate the key and value using the + operator 
+        console.log(keyVal)
+      }
+    })
+    .catch(error => console.error(error));
 
-        });
+
+
+
+    //const result = entries.map(entry => entry.join('-'));   
+    //this needs to be fixed so it concats the keys and values in a loop
+  
 
 
