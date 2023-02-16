@@ -51,15 +51,6 @@ userName.addEventListener('keydown', (e) =>{
   }
  })
 
-// Get breeds list 
- fetch(`https://dog.ceo/api/breeds/list/all`)
-    .then ((response) => response.json()) // Access the response using json() method
-     .then(data => {
-      for (let breed in data.message) { // Each iteration of the loop returns a breed key pair
-        let keyVal = breed + ' ' + data.message[breed]; // Concatenates the key and value using the + operator 
-      }
-    })
-    .catch(error => console.error(error));
 
 
 
@@ -83,17 +74,38 @@ fetch(`https://dog.ceo/api/breeds/list/all`)
       let newOption = document.createElement("option")
         dropdown.appendChild(newOption)
         newOption.innerText = breed
+    })
+  })
+  
 
-        // dropdown.addEventListener('leavechange')
-        // let value = dropdown.options[dropdown.selectedIndex].text;
-        //       console.log(value)
+  .catch((error) => console.error(error));
+
+
+
+
+  // Check random user does not already exist
+
+  let randomUser = 'x' // output of random user generated function
+  fetch(`https://api.github.com/users/${randomUser}`)
+  .then((response) => {
+  if (!response.ok){
+    const newUserDisplay = document.createElement('p');
+    newUserDisplay.innerText = randomUser;
+    const output = document.querySelector("output")
+    output.append(newUserDisplay)
+  }
+  return response.json();
+})
+  .then((user) => { 
+    console.log(user)
+    // repeat random username generator function
+  })
+  .catch((error) => console.error(error));
+
+
 
       })
 
         })
   .catch((error) => console.error(error));
 
-    // const randomIndex = Math.floor(Math.random() * arr.length)
-    // const item = fullBreedList[randomIndex];
-    // const randomString = Math.random().toString(36).slice(2);
-    //   let newUsername = item + '-' + randomString;
