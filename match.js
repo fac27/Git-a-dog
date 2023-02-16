@@ -51,28 +51,12 @@ userName.addEventListener('keydown', (e) =>{
   }
  })
 
-
-
-// // Get breeds list 
-//  fetch(`https://dog.ceo/api/breeds/list/all`)
-//     .then ((response) => response.json()) // Access the response using json() method
-//      .then(data => {
-//       for (let breed in data.message) { // Each iteration of the loop returns a breed key pair
-//         let keyVal = breed + ' ' + data.message[breed]; // Concatenates the key and value using the + operator 
-//         console.log(keyVal)
-//       }
-//     })
-//     .catch(error => console.error(error));
-
-
-
 // Get breeds list 
  fetch(`https://dog.ceo/api/breeds/list/all`)
     .then ((response) => response.json()) // Access the response using json() method
      .then(data => {
       for (let breed in data.message) { // Each iteration of the loop returns a breed key pair
         let keyVal = breed + ' ' + data.message[breed]; // Concatenates the key and value using the + operator 
-        console.log(keyVal)
       }
     })
     .catch(error => console.error(error));
@@ -102,3 +86,4 @@ fetch(`https://dog.ceo/api/breeds/list/all`)
     })
   })
   .catch((error) => console.error(error));
+
