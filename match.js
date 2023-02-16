@@ -110,7 +110,7 @@ fetch(`https://dog.ceo/api/breeds/list/all`)
 
   // Check random user does not already exist
 
-  let randomUser = 'x' // output of random user generated function
+  let randomUser = 'xghjsgfhgs' // output of random user generated function
   fetch(`https://api.github.com/users/${randomUser}`)
   .then((response) => {
   if (!response.ok){

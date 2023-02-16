@@ -1,3 +1,9 @@
 body {
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+}
+
+#purple-title {
+    width: 50px;
+    background-color: purple;
 }
