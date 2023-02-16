@@ -1,9 +1,8 @@
 // Access dog image API
-
-    function getDog(breed){
-    return fetch(`https://dog.ceo/api/breed/${breed}/images/random`)
-    .then((response) => response.json())
-  }
+     function getDog(breed){
+      return fetch(`https://dog.ceo/api/breed/${breed}/images/random`)
+      .then((response) => response.json())
+    }
 
 // Access github data from user input
 let userName = document.getElementById('user-name');
@@ -16,7 +15,6 @@ userName.addEventListener('keydown', (e) =>{
     .then((user) => console.log(user))
 
 // Access a dog breed according to the first character of the user input
-
     const breedList = `https://dog.ceo/api/breeds/list/all`
     fetch(breedList)
     .then ((response) => response.json())
@@ -36,7 +34,6 @@ userName.addEventListener('keydown', (e) =>{
         console.log(`Here's a random dog breed starting with '${inputValue}': ${randomBreed}.`);
 
 // Access the corresponding image of the dog
-    
       getDog(`${randomBreed}`)
       .then((randomDog) => {
         const dogImage = document.createElement("img")
@@ -50,10 +47,6 @@ userName.addEventListener('keydown', (e) =>{
     .catch((error) => console.log(error))  
   }
  })
-
-
-
-
 
 fetch(`https://dog.ceo/api/breeds/list/all`)
   .then((response) => response.json())
@@ -78,34 +71,38 @@ fetch(`https://dog.ceo/api/breeds/list/all`)
 
     dropdown.addEventListener('change',()=>{
       let value = dropdown.options[dropdown.selectedIndex].text;
+      
       const randomString = Math.random().toString(36).slice(2);
-      let newname = value + '-' + randomString;
-      console.log(newname);
+      let newName = value + '-' + randomString;
+      console.log(newName);
+      
+
+      // Check random username does not already exist
+      fetch(`https://api.github.com/users/${newName}`)
+      .then((response) => {
+      if (!response.ok){
+        const newUserDisplay = document.createElement('p');
+        newUserDisplay.innerText = newName;
+        const output = document.querySelector("output")
+        output.append(newUserDisplay)
+      }
+      return response.json();
     })
-  })
+      .then((user) => { 
+        console.log(user)
+        // Repeat random username generator function
+        const randomString = Math.random().toString(36).slice(2);
+        let newName = value + '-' + randomString;    
+      })
+      .catch((error) => console.error(error));
+        })
+      })
   .catch((error) => console.error(error));
 
 
 
 
-  // Check random user does not already exist
+    
 
-  let randomUser = 'xghjsgfhgs' // output of random user generated function
-  fetch(`https://api.github.com/users/${randomUser}`)
-  .then((response) => {
-  if (!response.ok){
-    const newUserDisplay = document.createElement('p');
-    newUserDisplay.innerText = randomUser;
-    const output = document.querySelector("output")
-    output.append(newUserDisplay)
-  }
-  return response.json();
-})
-  .then((user) => { 
-    console.log(user)
-    // repeat random username generator function
-  })
-  .catch((error) => console.error(error));
-
-        
+            
 
