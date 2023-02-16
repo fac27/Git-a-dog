@@ -6,7 +6,6 @@
   }
 
 // Access github data from user input
-
 let userName = document.getElementById('user-name');
 userName.addEventListener('keydown', (e) =>{
   if(e.key === "Enter"){
@@ -95,6 +94,11 @@ fetch(`https://dog.ceo/api/breeds/list/all`)
         fullBreedList .push(breed);
       }
     }
-    console.log(fullBreedList );
+    fullBreedList.forEach((breed) => {
+      let dropdown = document.getElementById("breedList")
+      let newOption = document.createElement("option")
+        dropdown.appendChild(newOption)
+        newOption.innerText = breed
+    })
   })
   .catch((error) => console.error(error));
