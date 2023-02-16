@@ -2,6 +2,13 @@ body {
     display: flex;
     flex-direction: column;
 }
+img{
+    max-height: 100vh;
+    max-width: 50%;
+}
+h2{
+    font-size: 1rem;
+}
 
 /* Header */
 
@@ -10,4 +17,28 @@ body {
     background-color: rgb(190, 14, 190);
     padding: 1rem;
     border-radius: 5px;
+}
+
+.border{
+    border-radius: 2px;
+    border-color: red;
+    border-style: solid;
+}
+
+
+.flex-container{
+    display: flex;
+    flex-flow: wrap row;
+    max-height: 100vh;
+    justify-content: space-around;
+    align-items: baseline
+}
+
+.start{
+align-self: flex-start;
+}
+
+.end{
+    align-self: center;
+    text-align: end;
 }
