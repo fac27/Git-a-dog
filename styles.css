@@ -3,7 +3,11 @@ body {
     flex-direction: column;
 }
 
+/* Header */
+
 #purple-title {
-    width: 50px;
-    background-color: purple;
+    width: 5rem;
+    background-color: rgb(190, 14, 190);
+    padding: 1rem;
+    border-radius: 5px;
 }
