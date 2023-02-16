@@ -78,22 +78,19 @@ fetch(`https://dog.ceo/api/breeds/list/all`)
         fullBreedList .push(breed);
       }
     }
+    
+    let dropdown = document.getElementById("breedList")
     fullBreedList.forEach((breed) => {
-      let dropdown = document.getElementById("breedList")
       let newOption = document.createElement("option")
         dropdown.appendChild(newOption)
         newOption.innerText = breed
-
-        // dropdown.addEventListener('leavechange')
-        // let value = dropdown.options[dropdown.selectedIndex].text;
-        //       console.log(value)
-
-      })
-
         })
+        dropdown.addEventListener('change',()=>{
+          let value = dropdown.options[dropdown.selectedIndex].text;
+          const randomString = Math.random().toString(36).slice(2);
+          let newname = value + '-' + randomString;
+          console.log(newname);
+        })
+      })
   .catch((error) => console.error(error));
 
-    // const randomIndex = Math.floor(Math.random() * arr.length)
-    // const item = fullBreedList[randomIndex];
-    // const randomString = Math.random().toString(36).slice(2);
-    //   let newUsername = item + '-' + randomString;
