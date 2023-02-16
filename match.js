@@ -67,7 +67,7 @@ userName.addEventListener('keydown', (e) =>{
 fetch(`https://dog.ceo/api/breeds/list/all`)
   .then((response) => response.json())
   .then((data) => {
-    const fullBreedList = [];
+    let fullBreedList = [];
     for (let breed in data.message) {
       let subBreed = data.message[breed];
       if (subBreed.length > 0) {
@@ -83,7 +83,17 @@ fetch(`https://dog.ceo/api/breeds/list/all`)
       let newOption = document.createElement("option")
         dropdown.appendChild(newOption)
         newOption.innerText = breed
-    })
-  })
+
+        // dropdown.addEventListener('leavechange')
+        // let value = dropdown.options[dropdown.selectedIndex].text;
+        //       console.log(value)
+
+      })
+
+        })
   .catch((error) => console.error(error));
 
+    // const randomIndex = Math.floor(Math.random() * arr.length)
+    // const item = fullBreedList[randomIndex];
+    // const randomString = Math.random().toString(36).slice(2);
+    //   let newUsername = item + '-' + randomString;
