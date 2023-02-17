@@ -4,7 +4,7 @@ body {
     flex-direction: column;
 }
 img {
-    max-height: 100vh;
+    max-height: 90vh;
     max-width: 50%;
 }
 
@@ -20,10 +20,10 @@ img {
 
 .flex-container {
     display: flex;
-    flex-flow: wrap row;
-    max-height: 100vh;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    max-height: 90vh;
     justify-content: space-around;
-    align-items: baseline
 }
 
 /* Form */
@@ -50,13 +50,8 @@ select {
     align-items: center;
 }
 
-.start {
-    align-self: flex-start;
-}
-
-.end {
-    align-self: center;
-    text-align: end;
+.flex-child{
+    text-align: center;
 }
 
 .center-text {
@@ -92,3 +87,14 @@ select {
     border-style: solid;
 }
 
+@media screen and (min-width: 600px)  {
+    .flex-container{
+        flex-flow: row;
+        justify-content: flex-start;
+    }
+    .flex-child{
+        width: 50%;
+        text-align: left; 
+        align-self: center;
+     }
+  }

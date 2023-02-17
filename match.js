@@ -40,7 +40,7 @@ function accessGit(event){
         dogResult.innerText = `${randomBreed}`;
         breedOutput.append(dogResult)
 // Output text
-        document.getElementById("breed-output").innerText = "Based on your github username {" + inputValue + "} you would be a " + randomBreed
+        document.getElementById("breed-output").innerText = "Based on your github username " + inputValue + " you would be a " + randomBreed
 
 // Access the corresponding image of the dog
       getDog(`${randomBreed}`)
