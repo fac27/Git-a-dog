@@ -6,27 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Git-a-dog</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
     
 </head>
 <body>
     <header>
-        
-            <p id="purple-title">Git-a-dog</p>
-
+            <h1 class="text-l" id="purple-title">Git-a-dog</h1>
     </header>
+
     <section class="flex-container border">
         <img src="images/gitadog_logo.PNG" class="start" >
-        <h2 class="end">Ever wondered what your github name *really* says about you?</h2>
-
+        <h2 class="end text-xl" id="wonder-text"></h2>
+        <h3 class="text-l" id="now-text"></h3>
     </section>
 
-    <section>
-        <label for="user-name">user name</label>
-        <input type="text" name="user-name" id="user-name">
+    <section class="stack-m">
+        <form class="flex-column">
+            <label class="stack-l" for="user-name">Github name</label>
+            <input class="stack-l" type="text" name="user-name" id="user-name">
+            <button class="stack-l" type="submit" value="submit"></button>
 
-        <label for="breedList">Breed</label>
-        <select id="breedList"></select>
+            <label for="breedList">Breed</label>
+            <select id="breedList"></select>
+        </form>
     </section>
+
 
 
     <output></output>

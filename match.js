@@ -101,8 +101,11 @@ fetch(`https://dog.ceo/api/breeds/list/all`)
 
 
 
+        
+// Page text
 
-    
+const wonderText = document.getElementById("wonder-text");
+wonderText.innerText = "Ever wondered what your github name *really* says about you?";
 
-            
-
+const nowText = document.getElementById("now-text")
+nowText.innerText = "Now with Git-a-dog you can find out what sort of dog you would be based on your github name and profile"
