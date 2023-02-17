@@ -54,17 +54,15 @@ userName.addEventListener('keydown', (e) =>{
 fetch(`https://dog.ceo/api/breeds/list/all`)
   .then((response) => response.json())
   .then((data) => {
-    let fullBreedList = [];
-    for (let breed in data.message) {
-      let subBreed = data.message[breed];
-      if (subBreed.length > 0) {
-        subBreed.forEach((sub) => {
-          fullBreedList .push(breed + '-' + sub);
-        });
-      } else {
-        fullBreedList .push(breed);
+    const fullBreedList = Object.entries(data.message)
+    .map(([breed,subBreeds]) =>{
+      if (subBreeds.length > 0){
+        return subBreeds.map((subBreed) => `${breed}-${subBreed}`);
       }
-    }
+      return breed;
+    })
+    .flat();
+
     let dropdown = document.getElementById("breedList")
     fullBreedList.forEach((breed) => {
       let newOption = document.createElement("option")
