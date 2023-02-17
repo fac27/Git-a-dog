@@ -121,9 +121,7 @@ fetch(`https://dog.ceo/api/breeds/list/all`)
       .then((response) => {
       if (!response.ok){
         const newUserDisplay = document.createElement('p');
-        // newUserDisplay.innerText = '';
         newUserDisplay.innerText = newName;
-        // const outputNewUser = document.getElementById("new-user")
         outputNewUser.append(newUserDisplay)
       }
       return response.json();
