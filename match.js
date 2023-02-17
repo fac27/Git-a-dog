@@ -8,9 +8,12 @@
 
 // Access github data from user input
 let userName = document.getElementById('user-name');
-userName.addEventListener('keydown', (e) =>{
-  if(e.key === "Enter"){
-    e.preventDefault();
+const enterButton = document.getElementById('enter-button');
+
+enterButton.addEventListener('click', accessGit);
+
+function accessGit(event){
+    event.preventDefault();
     let inputValue = userName.value;
     fetch(`https://api.github.com/users/${inputValue}`)
     .then((response) => response.json()) // Access the response using json() method
@@ -49,7 +52,8 @@ userName.addEventListener('keydown', (e) =>{
     })
     .catch((error) => console.log(error))  
   }
- })
+// }
+//  })
 
 
 // Create username according to selected dog breed 

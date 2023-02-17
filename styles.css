@@ -12,9 +12,10 @@ img {
 
 #purple-title {
     width: 6rem;
-    background-color: rgb(190, 14, 190);
+    background-color: #be4df3;
     padding: 1rem;
     border-radius: 5px;
+    color: white;
 }
 
 .flex-container {
