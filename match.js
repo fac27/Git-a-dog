@@ -4,16 +4,21 @@
       .then((response) => response.json())
     }
 
-
-
 // Access github data from user input
 let userName = document.getElementById('user-name');
 const enterButton = document.getElementById('enter-button');
+const breedOutput = document.getElementById("breed-output");
+const imgOutput = document.getElementById("img-output");
 
 enterButton.addEventListener('click', accessGit);
 
 function accessGit(event){
-    event.preventDefault();
+    event.preventDefault(); // Prevent default page refresh
+   
+    // Clear previous results
+    breedOutput.innerText = '';
+    imgOutput.innerHTML = '';
+
     let inputValue = userName.value;
     fetch(`https://api.github.com/users/${inputValue}`)
     .then((response) => response.json()) // Access the response using json() method
@@ -33,9 +38,7 @@ function accessGit(event){
         let randomBreed = matchingBreeds[Math.floor(Math.random() * matchingBreeds.length)];
         const dogResult = document.createElement("p");
         dogResult.innerText = `${randomBreed}`;
-        const breedOutput = document.getElementById("breed-output")
         breedOutput.append(dogResult)
-
 // Output text
         document.getElementById("breed-output").innerText = "Based on your github username {" + inputValue + "} you would be a " + randomBreed
 
@@ -44,7 +47,6 @@ function accessGit(event){
       .then((randomDog) => {
         const dogImage = document.createElement("img")
         dogImage.src = randomDog.message
-        const imgOutput = document.getElementById("img-output")
         imgOutput.append(dogImage)
       })
       .catch((error) => console.log(error))
@@ -52,8 +54,6 @@ function accessGit(event){
     })
     .catch((error) => console.log(error))  
   }
-// }
-//  })
 
 
 // Create username according to selected dog breed 
@@ -78,12 +78,16 @@ fetch(`https://dog.ceo/api/breeds/list/all`)
     })
 
     dropdown.addEventListener('change',()=>{
+      // Clear previous results
+      const masterOutput = document.getElementById("master-img");
+      masterOutput.innerHTML = '';
+
+      const outputNewUser = document.getElementById("new-user");
+      outputNewUser.innerHTML = '';
+
       let value = dropdown.options[dropdown.selectedIndex].text;
-      
       const randomString = Math.random().toString(36).slice(2);
       let newName = value + '-' + randomString;
-      console.log(newName);
-      console.log(value)
 
 // Find dog image that corresponds to selected breed
       let masterBreed;
@@ -95,7 +99,6 @@ fetch(`https://dog.ceo/api/breeds/list/all`)
         .then ((masterDog) => {
           const dogImage = document.createElement("img");
           dogImage.src = masterDog.message;
-          const masterOutput = document.getElementById("master-img");
           masterOutput.append(dogImage)
         }
         )
@@ -107,27 +110,26 @@ fetch(`https://dog.ceo/api/breeds/list/all`)
         .then ((masterDog) => {
           const dogImage = document.createElement("img");
           dogImage.src = masterDog.message;
-          const masterOutput = document.getElementById("master-img");
           masterOutput.append(dogImage)
         }
         )
       }
  
       
-      // Check random username does not already exist
+// Check random username does not already exist
       fetch(`https://api.github.com/users/${newName}`)
       .then((response) => {
       if (!response.ok){
         const newUserDisplay = document.createElement('p');
+        // newUserDisplay.innerText = '';
         newUserDisplay.innerText = newName;
-        const outputNewUser = document.getElementById("new-user")
+        // const outputNewUser = document.getElementById("new-user")
         outputNewUser.append(newUserDisplay)
       }
       return response.json();
     })
       .then((user) => { 
-        // console.log(user)
-        // Repeat random username generator function
+// If name already exists then repeat random username generator function
         const randomString = Math.random().toString(36).slice(2);
         let newName = value + '-' + randomString;    
       })
