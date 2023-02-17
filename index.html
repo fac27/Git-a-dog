@@ -18,23 +18,34 @@
     <section class="flex-container border">
         <img src="images/gitadog_logo.PNG" class="start" >
         <h2 class="end text-xl" id="wonder-text"></h2>
-        <h3 class="text-l" id="now-text"></h3>
     </section>
 
-    <section class="stack-m">
+    <section id="user-search" class="stack-m center-text">
+        <h3 class="text-l" id="now-text"></h3>
         <form class="flex-column">
             <label class="stack-l" for="user-name">Github name</label>
-            <input class="stack-l" type="text" name="user-name" id="user-name">
-            <button class="stack-l" type="submit" value="submit"></button>
+            <input class="stack-l" type="text" name="user-name" id="user-name" placeholder="Your name">
+            <button class="stack-l" type="submit" value="submit">Enter</button>
+        </form>
+        <output id="breed-output"></output>
+        <output id="img-output"></output>
+    </section>
 
-            <label for="breedList">Breed</label>
-            <select id="breedList"></select>
+    <section id="breed-search" class="center-text">
+        <h2 class="text-xl stack-xl" id="new-user-text"></h2>
+        <h3 id="choose-text" class="text-l"></h3>
+        
+        <form class="flex-column">
+            <label for="breedList" class="stack-l">Breed</label>
+            <select id="breedList" class="stack-m"></select>
+            <output id="new-user"></output>
         </form>
     </section>
 
 
 
-    <output></output>
+
+
 </body>
 <script src="match.js"></script>
 </html>

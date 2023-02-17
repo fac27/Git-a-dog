@@ -29,6 +29,15 @@ img {
 
 button[type="submit"] {
     width: 20%;
+    height: 2rem;
+    border: solid grey 0.5px;
+    border-radius: 3px;
+    font-family: "poppins";
+}
+
+select {
+
+    height: 2rem;
 }
 
 
@@ -42,12 +51,16 @@ button[type="submit"] {
 }
 
 .start {
-align-self: flex-start;
+    align-self: flex-start;
 }
 
 .end {
     align-self: center;
     text-align: end;
+}
+
+.center-text {
+    text-align: center;
 }
 
 /* Text sizing  */
@@ -59,9 +72,6 @@ align-self: flex-start;
     font-size: 1rem;
 }
 
-.text-m {
-    font-size: 0.7rem;
-}
 
 /* Height distribution */
 .stack-xl {

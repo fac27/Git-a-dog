@@ -28,8 +28,8 @@ userName.addEventListener('keydown', (e) =>{
         let randomBreed = matchingBreeds[Math.floor(Math.random() * matchingBreeds.length)];
         const dogResult = document.createElement("p");
         dogResult.innerText = `${randomBreed}`;
-        const output = document.querySelector("output")
-        output.append(dogResult)
+        const breedOutput = document.getElementById("breed-output")
+        breedOutput.append(dogResult)
 
         console.log(`Here's a random dog breed starting with '${inputValue}': ${randomBreed}.`);
 
@@ -38,8 +38,8 @@ userName.addEventListener('keydown', (e) =>{
       .then((randomDog) => {
         const dogImage = document.createElement("img")
         dogImage.src = randomDog.message
-        const output = document.querySelector("output")
-        output.append(dogImage)
+        const imgOutput = document.getElementById("img-output")
+        imgOutput.append(dogImage)
       })
       .catch((error) => console.log(error))
       }   
@@ -47,6 +47,9 @@ userName.addEventListener('keydown', (e) =>{
     .catch((error) => console.log(error))  
   }
  })
+
+
+// Create username according to selected dog breed 
 
 fetch(`https://dog.ceo/api/breeds/list/all`)
   .then((response) => response.json())
@@ -83,8 +86,8 @@ fetch(`https://dog.ceo/api/breeds/list/all`)
       if (!response.ok){
         const newUserDisplay = document.createElement('p');
         newUserDisplay.innerText = newName;
-        const output = document.querySelector("output")
-        output.append(newUserDisplay)
+        const outputNewUser = document.getElementById("new-user")
+        outputNewUser.append(newUserDisplay)
       }
       return response.json();
     })
@@ -107,5 +110,11 @@ fetch(`https://dog.ceo/api/breeds/list/all`)
 const wonderText = document.getElementById("wonder-text");
 wonderText.innerText = "Ever wondered what your github name *really* says about you?";
 
-const nowText = document.getElementById("now-text")
-nowText.innerText = "Now with Git-a-dog you can find out what sort of dog you would be based on your github name and profile"
+const nowText = document.getElementById("now-text");
+nowText.innerText = "Now with Git-a-dog you can find out what sort of dog you would be based on your github name and profile";
+
+const newUserText = document.getElementById("new-user-text");
+newUserText.innerText = "Don't have a Github profile yet and need inspiration for a username?"
+
+const chooseText = document.getElementById("choose-text");
+chooseText.innerText = "Choose a dog breed to generate a new username";
