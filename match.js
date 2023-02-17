@@ -4,6 +4,8 @@
       .then((response) => response.json())
     }
 
+
+
 // Access github data from user input
 let userName = document.getElementById('user-name');
 userName.addEventListener('keydown', (e) =>{
@@ -55,7 +57,7 @@ userName.addEventListener('keydown', (e) =>{
 fetch(`https://dog.ceo/api/breeds/list/all`)
   .then((response) => response.json())
   .then((data) => {
-    const fullBreedList = Object.entries(data.message)
+    let fullBreedList = Object.entries(data.message)
     .map(([breed,subBreeds]) =>{
       if (subBreeds.length > 0){
         return subBreeds.map((subBreed) => `${breed}-${subBreed}`);
@@ -78,8 +80,36 @@ fetch(`https://dog.ceo/api/breeds/list/all`)
       let newName = value + '-' + randomString;
       console.log(newName);
       console.log(value)
-      
 
+// Find dog image that corresponds to selected breed
+      let masterBreed;
+
+      if (value.includes('-')){
+        masterBreed = value.split('-')[0];
+        console.log(masterBreed);
+        getDog(`${masterBreed}`)
+        .then ((masterDog) => {
+          const dogImage = document.createElement("img");
+          dogImage.src = masterDog.message;
+          const masterOutput = document.getElementById("master-img");
+          masterOutput.append(dogImage)
+        }
+        )
+      }
+      else {
+        masterBreed = value;
+        console.log(masterBreed);
+        getDog(`${masterBreed}`)
+        .then ((masterDog) => {
+          const dogImage = document.createElement("img");
+          dogImage.src = masterDog.message;
+          const masterOutput = document.getElementById("master-img");
+          masterOutput.append(dogImage)
+        }
+        )
+      }
+ 
+      
       // Check random username does not already exist
       fetch(`https://api.github.com/users/${newName}`)
       .then((response) => {
@@ -92,7 +122,7 @@ fetch(`https://dog.ceo/api/breeds/list/all`)
       return response.json();
     })
       .then((user) => { 
-        console.log(user)
+        // console.log(user)
         // Repeat random username generator function
         const randomString = Math.random().toString(36).slice(2);
         let newName = value + '-' + randomString;    
@@ -113,10 +143,10 @@ wonderText.innerText = "Ever wondered what your github name *really* says about 
 const nowText = document.getElementById("now-text");
 nowText.innerText = "Now with Git-a-dog you can find out what sort of dog you would be based on your github name and profile";
 
-
-
 const newUserText = document.getElementById("new-user-text");
 newUserText.innerText = "Don't have a Github profile yet and need inspiration for a username?"
 
 const chooseText = document.getElementById("choose-text");
 chooseText.innerText = "Choose a dog breed to generate a new username";
+
+
