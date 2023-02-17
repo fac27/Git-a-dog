@@ -31,7 +31,8 @@ userName.addEventListener('keydown', (e) =>{
         const breedOutput = document.getElementById("breed-output")
         breedOutput.append(dogResult)
 
-        console.log(`Here's a random dog breed starting with '${inputValue}': ${randomBreed}.`);
+// Output text
+        document.getElementById("breed-output").innerText = "Based on your github username {" + inputValue + "} you would be a " + randomBreed
 
 // Access the corresponding image of the dog
       getDog(`${randomBreed}`)
@@ -76,6 +77,7 @@ fetch(`https://dog.ceo/api/breeds/list/all`)
       const randomString = Math.random().toString(36).slice(2);
       let newName = value + '-' + randomString;
       console.log(newName);
+      console.log(value)
       
 
       // Check random username does not already exist
@@ -110,6 +112,8 @@ wonderText.innerText = "Ever wondered what your github name *really* says about 
 
 const nowText = document.getElementById("now-text");
 nowText.innerText = "Now with Git-a-dog you can find out what sort of dog you would be based on your github name and profile";
+
+
 
 const newUserText = document.getElementById("new-user-text");
 newUserText.innerText = "Don't have a Github profile yet and need inspiration for a username?"
