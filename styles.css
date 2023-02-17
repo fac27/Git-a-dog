@@ -28,8 +28,6 @@ img {
 /* Form */
 
 button[type="submit"] {
-    width: 20%;
-    height: 2rem;
     border: solid grey 0.5px;
     border-radius: 3px;
     font-family: "poppins";
@@ -71,6 +69,7 @@ select {
 .text-l {
     font-size: 1rem;
 }
+
 
 
 /* Height distribution */
