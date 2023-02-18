@@ -11,13 +11,19 @@
     
 </head>
 <body>
-    <header>
-            <h1 class="text-l" id="purple-title">Git-a-dog</h1>
+    <header >
+            <nav class="flex-nav dropdown">
+                <button class="text-l" id="purple-title">Git-a-dog</button>
+                <ul class="flex-nav dropdown-content">
+                    <li><a class="list-item" href="#user-name">git-a-dog</a></li>
+                    <li><a class="list-item" href="#breedList">git-a-name</a></li> 
+                </ul>
+            </nav>
     </header>
 
-    <section class="flex-container border">
-        <img src="images/gitadog_logo.PNG" class="start" >
-        <h2 class="end text-xl" id="wonder-text"></h2>
+    <section class="flex-container">
+        <h2 class="flex-child text-xl" id="wonder-text"></h2>
+        <img src="images/gitadog_logo.PNG" class="flex-child">
     </section>
 
     <section id="user-search" class="flex-column stack-m center-text">
@@ -42,11 +48,6 @@
             <output id="master-img"></output>
         </form>
     </section>
-
-
-
-
-
 </body>
 <script src="match.js"></script>
 </html>
