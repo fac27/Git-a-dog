@@ -154,5 +154,3 @@ newUserText.innerText = "Don't have a Github profile yet and need inspiration fo
 
 const chooseText = document.getElementById("choose-text");
 chooseText.innerText = "Choose a dog breed to generate a new username";
-
-

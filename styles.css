@@ -140,7 +140,14 @@ select {
      }
   }
   @media screen and (max-width: 450px) {
-    li{
+    #purple-title{
         display: none;
     }
+    .flex-nav{
+        display: flex;
+        justify-content: space-between;
+    }
+    .list-item{
+        align-items: center;
   }
+
