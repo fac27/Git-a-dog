@@ -21,8 +21,13 @@ function accessGit(event){
 
     let inputValue = userName.value;
     fetch(`https://api.github.com/users/${inputValue}`)
-    .then((response) => response.json()) // Access the response using json() method
-    .then((user) => console.log(user))
+    .then((response) => {
+      if (response.status === 404) {
+        throw new Error('User not found');
+      }
+      return response.json(); // Access the response using json() method
+    })
+    .then((user) => {
 
 // Access a dog breed according to the first character of the user input
     const breedList = `https://dog.ceo/api/breeds/list/all`
@@ -33,14 +38,13 @@ function accessGit(event){
       let inputValue = userName.value;
       let matchingBreeds = breeds.filter(breed => breed.startsWith(inputValue.charAt(0).toLowerCase()));
       if (matchingBreeds.length === 0) {
-        console.log(`No dog breeds found starting with '${inputValue.charAt(0)}'.`);
+        throw new Error(`No dog breeds found starting with '${inputValue.charAt(0)}'.`);
       } else {
         let randomBreed = matchingBreeds[Math.floor(Math.random() * matchingBreeds.length)];
         const dogResult = document.createElement("p");
         dogResult.innerText = `${randomBreed}`;
         breedOutput.append(dogResult)
 // Output text
-        document.getElementById("breed-output").innerText = "Based on your github username " + inputValue + " you would be a " + randomBreed
         document.getElementById("breed-output").innerText = "Based on your github username {" + inputValue + "} you would be a " + randomBreed
 
 
@@ -54,8 +58,19 @@ function accessGit(event){
       .catch((error) => console.log(error))
       }   
     })
-    .catch((error) => console.log(error))  
-  }
+    .catch((error) => {
+      console.log(error)
+    })
+  })
+  .catch((error) => {
+    const errorImage = document.createElement("img")
+    document.getElementById("breed-output").innerText = 'Sorry, this user does not exit - you can get a git username below!'
+    errorImage.src = 'Images/this-is-dog.png'
+    imgOutput.append(errorImage)
+  
+  }); //added error alert if username is not found
+}
+
 
 
 // Create username according to selected dog breed 
