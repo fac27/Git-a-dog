@@ -44,6 +44,7 @@ function accessGit(event){
         const dogResult = document.createElement("p");
         dogResult.innerText = `${randomBreed}`;
         breedOutput.append(dogResult)
+        
 // Output text
         document.getElementById("breed-output").innerText = "Based on your github username {" + inputValue + "} you would be a " + randomBreed
 
@@ -60,6 +61,8 @@ function accessGit(event){
     })
     .catch((error) => {
       console.log(error)
+      document.getElementById("breed-output").innerText = `No dog breeds found starting with '${inputValue.charAt(0)}'.`
+
     })
   })
   .catch((error) => {
