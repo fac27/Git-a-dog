@@ -129,17 +129,6 @@ select {
      }
   }
   @media screen and (max-width: 450px) {
-    
-    /* I think these are both unnecessary as .flex-nav is no different to original and .list-item doesn't seem to have any effect?
-
-    .flex-nav{
-        display: flex;
-        justify-content: space-between;
-    } 
-
-    .list-item{
-        align-items: center;
-  } */
 
     .flex-nav {
         justify-content: center;
