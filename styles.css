@@ -14,18 +14,7 @@ img {
 
 /* Header */
 
-#purple-title {
 
-    width: 10rem;
-    background-color: #be4df3;
-    padding: 1rem;
-    border-radius: 5px;
-    border: none;
-    color: white;
-    text-align: center;
-    margin-top: auto;
-    margin-bottom: auto;
-}
 .flex-nav{
     display: flex;
     flex-direction: row;
@@ -140,14 +129,20 @@ select {
      }
   }
   @media screen and (max-width: 450px) {
-    #purple-title{
-        display: none;
-    }
+    
+    /* I think these are both unnecessary as .flex-nav is no different to original and .list-item doesn't seem to have any effect?
+
     .flex-nav{
         display: flex;
         justify-content: space-between;
-    }
+    } 
+
     .list-item{
         align-items: center;
-  }
+  } */
 
+    .flex-nav {
+        justify-content: center;
+    }
+
+  }
