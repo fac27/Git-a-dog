@@ -1,3 +1,135 @@
+html {
+    scroll-behavior: smooth;
+  }
+
 body {
-    background-color: red;
+    display: flex;
+    font-family: "poppins";
+    flex-direction: column;
 }
+img {
+    max-height: 90vh;
+    max-width: 50%;
+}
+
+/* Header */
+
+
+.flex-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.list-item{
+    align-items: flex-end;
+    padding: 5px;
+    margin: 5px;
+    background-color: #51FFC3ff;    
+    border-radius: 5px;
+}
+.list-item:hover{
+    background-color:#be4df3;
+}
+a:visited{
+    text-decoration: none;
+
+    width: 6rem;
+    background-color: #be4df3;
+    padding: 1rem;
+    border-radius: 5px;
+    color: white;
+
+}
+a{
+    text-decoration: none;
+}
+
+
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    max-height: 90vh;
+    justify-content: space-around;
+}
+
+/* Form */
+
+button[type="submit"] {
+    font-family: "poppins";
+}
+
+select {
+    font-family: "poppins";
+}
+
+
+/* CSS primitives  */ 
+
+.border {
+    border: solid grey 0.5px;
+    border-radius: 3px;
+
+}
+/* Layout */
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex-child{
+    text-align: center;
+}
+
+.center-text {
+    text-align: center;
+}
+
+/* Text sizing  */
+.text-xl {
+    font-size: 2rem;
+}
+
+.text-l {
+    font-size: 1rem;
+}
+
+
+
+/* Height distribution */
+.stack-xl {
+    margin-top: 3rem;
+}
+.stack-l {
+    margin-top: 2rem;
+}
+.stack-m {
+    margin-top: 1rem;
+}
+.stack-below {
+    margin-bottom: 5rem;
+}
+
+@media screen and (min-width: 600px)  {
+    .flex-container{
+        flex-flow: row;
+        justify-content: flex-start;
+    }
+    .flex-child{
+        width: 50%;
+        text-align: left; 
+        align-self: center;
+     }
+  }
+  @media screen and (max-width: 450px) {
+
+
+    .flex-nav {
+        justify-content: center;
+    }
+
+  }

@@ -2,6 +2,7 @@
 
 The project this week was to build an app that queries at least two APIs and uses the results to update the DOM. 
 
+
 #### About the repo
 
 ##### Why 
@@ -31,6 +32,7 @@ As a user, I want to:
 
 #### Wireframe
 ![wireframe](Images/Wireframe%20scrnshot.png)
+
 
 ### SPIKE
 
