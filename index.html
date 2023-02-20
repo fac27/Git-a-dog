@@ -1,32 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Git-a-dog</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-
-    
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins"
+    />
+  </head>
+  <body>
     <header>
-            <nav class="flex-nav dropdown">
-                <ul class="flex-nav dropdown-content" >
-                    <li><a class="list-item" href="#user-name">git-a-dog</a></li>
-                    <li><a class="list-item" href="#breedList">git-a-name</a></li> 
-                    <a href="javascript:void(0);" class="icon" ><i class="fa fa-bars"></i></a>
-                </ul>
-            </nav>
+      <nav class="flex-nav dropdown">
+        <ul class="flex-nav dropdown-content">
+          <li><a class="list-item" href="#user-name">git-a-dog</a></li>
+          <li><a class="list-item" href="#breedList">git-a-name</a></li>
+          <a href="javascript:void(0);" class="icon"
+            ><i class="fa fa-bars"></i
+          ></a>
+        </ul>
+      </nav>
     </header>
 
     <section class="flex-container">
-        <h2 class="flex-child text-xl" id="wonder-text"></h2>
-        <img src="Images/gitadog_logo.PNG" class="flex-child">
+      <h2 class="flex-child text-xl" id="wonder-text"></h2>
+      <img src="Images/gitadog_logo.PNG" class="flex-child" />
     </section>
 
     <section id="user-search" class="flex-column stack-m center-text">
+
+      <h3 class="text-l" id="now-text"></h3>
+      <form class="flex-column">
+        <label class="stack-l" for="user-name">Github name</label>
+        <input
+          class="stack-l"
+          type="text"
+          name="user-name"
+          id="user-name"
+          placeholder="Your name"
+        />
+        <button class="stack-l" type="submit" value="submit" id="enter-button">
+          Enter
+        </button>
+      </form>
+      <output id="img-output" class="stack-l"></output>
+      <output id="breed-output" class="text-l stack-m"></output>
+    </section>
+
+    <section id="breed-search" class="center-text">
+      <h2 class="text-xl stack-xl" id="new-user-text"></h2>
+      <h3 id="choose-text" class="text-l"></h3>
+
+      <form class="flex-column">
+        <label for="breedList" class="stack-l">Breed</label>
+        <select id="breedList" class="stack-m"></select>
+        <output id="new-user"></output>
+        <output id="master-img"></output>
+      </form>
+
         <h3 class="text-l" id="now-text"></h3>
         <form class="flex-column">
             <label class="stack-l" for="user-name">Github name</label>
@@ -47,7 +80,8 @@
             <output id="new-user"></output>
             <output id="master-img"></output>
         </form>
+
     </section>
-</body>
-<script src="match.js"></script>
+  </body>
+  <script src="match.js"></script>
 </html>
