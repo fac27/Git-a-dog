@@ -59,20 +59,21 @@ a{
 /* Form */
 
 button[type="submit"] {
-    border: solid grey 0.5px;
-    border-radius: 3px;
     font-family: "poppins";
 }
 
 select {
-
-    height: 2rem;
     font-family: "poppins";
 }
 
 
 /* CSS primitives  */ 
 
+.border {
+    border: solid grey 0.5px;
+    border-radius: 3px;
+
+}
 /* Layout */
 .flex-column {
     display: flex;
@@ -103,18 +104,14 @@ select {
 .stack-xl {
     margin-top: 3rem;
 }
-
 .stack-l {
     margin-top: 2rem;
 }
 .stack-m {
     margin-top: 1rem;
 }
-
-.border {
-    border-radius: 2px;
-    border-color: red;
-    border-style: solid;
+.stack-below {
+    margin-bottom: 5rem;
 }
 
 @media screen and (min-width: 600px)  {
