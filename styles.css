@@ -68,8 +68,9 @@ select {
 .border {
     border: solid grey 0.5px;
     border-radius: 3px;
-
 }
+
+
 /* Layout */
 .flex-column {
   display: flex;
@@ -124,3 +125,4 @@ select {
     .flex-nav {
         justify-content: center;
     }
+  }
