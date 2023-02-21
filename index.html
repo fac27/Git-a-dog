@@ -35,13 +35,13 @@
       <form class="flex-column">
         <label class="stack-l" for="user-name">Github name</label>
         <input
-          class="stack-l"
+          class="stack-l border"
           type="text"
           name="user-name"
           id="user-name"
-          placeholder="Your name"
+          placeholder="Your github name"
         />
-        <button class="stack-l" type="submit" value="submit" id="enter-button">
+        <button class="stack-l" type="submit" value="submit" id="find-breed-enter-button">
           Enter
         </button>
       </form>
@@ -54,14 +54,22 @@
       <h3 id="choose-text" class="text-l"></h3>
 
       <form class="flex-column">
+
+        <label for="first-name">First name</label>
+        <input id="first-name" class="stack-m border" placeholder="Your name"/>
         <label for="breedList" class="stack-l">Breed</label>
-        <select id="breedList" class="stack-m"></select>
+        <select id="breedList" class="stack-m border"></select>
+
+        <button class="stack-l" type="submit" value="submit" id="generate-user">
+          Enter
+        </button>
+
+
+        <output id="master-img" class="stack-l"></output>
         <output id="new-user"></output>
-        <output id="master-img"></output>
+
       </form>
 
-        <output id="img-output" class="stack-l"></output>
-        <output id="breed-output" class="text-l stack-m"></output>
     </section>
   </body>
   <script src="match.js"></script>
