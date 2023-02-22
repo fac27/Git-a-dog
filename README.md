@@ -1,11 +1,10 @@
 ## Project
 
 The project this week was to build an app that queries at least two APIs and uses the results to update the DOM. 
+We decided to use [Github's API](https://docs.github.com/en/rest?apiVersion=2022-11-28) and the [dog.ceo API](https://dog.ceo/dog-api/) so that we could match github usernames to images of dogs.
 
 
 #### About the repo
-
-##### Why 
 - The purpose of this repo is to produce our app in collaboration and build on github skills.
 
 ##### Why 
