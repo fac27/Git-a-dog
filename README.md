@@ -30,7 +30,7 @@ As a user, I want to:
 [x] Ensure your app is accessible to as many different users as possible
 
 #### Wireframe
-![wireframe](Images/Wireframe%20scrnshot.png)
+![wireframe](Images/Wireframe-scrnshot.png)
 
 
 ### SPIKE
