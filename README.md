@@ -30,7 +30,17 @@ As a user, I want to:
 [x] Ensure your app is accessible to as many different users as possible
 
 #### Wireframe
-![wireframe](Images/Wireframe-scrnshot.png)
+We used [Miro](https://miro.com/app/board/uXjVPo2t_es=/) to create a wireframe
+> ![wireframe](Images/Wireframe-scrnshot.png)
+Mobile view
+> ![mobileView](Images/mobile.png)
+Web view
+> ![webView](Images/web.png)
+
+We created our logo using Dall.e then edited this to reach a final image we were happy with
+> ![Logo](Images/Logo-plan.png)
+> ![Logo](Images/gitadog_logo.PNG)
+
 
 
 ### SPIKE
