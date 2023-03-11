@@ -35,7 +35,7 @@ As a user, I want to:
 [x] Ensure your app is accessible to as many different users as possible
 
 
-#### Building the app
+#### Notes on the design
 
 - We used [Miro](https://miro.com/app/board/uXjVPo2t_es=/) to create a wireframe
 ![wireframe](Images/Wireframe-scrnshot.png)
@@ -46,7 +46,7 @@ Web view
 
 - We created our logo using Dall.e then edited this to reach a final image we were happy with
 ![Logo](Images/Logo-plan.png)
-![Logo](Images/gitadog_logo.PNG)
+<img src="Images/gitadog_logo.PNG" width="300px">
 
 
 
