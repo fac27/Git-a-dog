@@ -21,12 +21,16 @@ As a user, I want to:
 > View the app on all of my devices
 
 
-### Acceptance Criteria 
+#### Acceptance Criteria 
 
 [x] Query at least two APIs using fetch
+
 [x] Dynamic content generated with JS
+
 [x] A clearly defined user journey, documented in your readme
+
 [x] A responsive, mobile-first design
+
 [x] Ensure your app is accessible to as many different users as possible
 
 #### Wireframe
