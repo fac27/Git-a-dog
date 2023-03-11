@@ -16,8 +16,11 @@ We decided to use [Github's API](https://docs.github.com/en/rest?apiVersion=2022
 ### User Story
 
 As a user, I want to:
+
 > Use my github data to find my perfect dog breed
+
 > Create a github username according to a dog breed of my choice
+
 > View the app on all of my devices
 
 
